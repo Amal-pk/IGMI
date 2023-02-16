@@ -12,15 +12,13 @@ class HomeController extends GetxController {
   void onInit() {
     super.onInit();
     createUser();
+    update();
   }
 
   createUser() async {
     isLoading = true;
-    // print("123456");
 
-    // print(value.toString());
     Time? timeRespoModel = await TimeSerivce.instance.slot();
-    // log(timeRespoModel!.message);
     if (timeRespoModel!.message == "Data found") {
       print(timeRespoModel.status.toString());
       list.clear();
